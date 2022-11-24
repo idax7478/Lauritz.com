@@ -1,4 +1,4 @@
-/* Alias/design tokens */
+/* options */
 
 :root {
   --color-Navyblue_primary-100: #243a99;
@@ -57,13 +57,17 @@
   --font-size-bodytekst-MD: 17px;
   --line-height-headings: 1.2;
   --line-height-bodytext: 1.7;
-}
 
-body {
-  display: grid;
-  place-content: center;
+  /* alias/component tokens */
+
+  --card-bg: var(--color-Calm-bodybackground-500);
+  --navy-blue-bg: var(--color-Navyblue_primary-900);
+  --ocean-blue-bg: var(--color-Oceanblue_sencondary-100);
 }
 
 article {
+  display: grid;
   max-width: 1000px;
+  place-items: center;
+  background: var(--card-bg);
 }
