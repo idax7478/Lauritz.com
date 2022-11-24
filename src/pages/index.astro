@@ -1,5 +1,5 @@
 ---
-
+import Card from "../components/Card.astro";
 ---
 
 <html lang="en">
@@ -12,5 +12,22 @@
 	</head>
 	<body>
 		<h1>Oversigt over components</h1>
+
+    
+    <Card
+      deluxe={true}
+      titel="titel 1"
+      beskrivelse="Hej med dig"
+      variant="primary"
+    />
+    <Card
+      deluxe={false}
+      titel="titel 2"
+      beskrivelse="Hej med dig"
+      variant="secondary"
+    />
+
+    <!-- <Button /> -->
+
 	</body>
 </html>
