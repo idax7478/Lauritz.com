@@ -48,10 +48,10 @@
   --radius-small: 10px;
   --shadow-card-shadow: 5px 5px 28px 0px rgba(32, 32, 32, 0.75);
   --shadow-blue-box: 0px 1px 12px 0px rgba(32, 32, 32, 0.75);
-  --font-family-H1: alfarn-2;
-  --font-family-H2: alfarn-2;
-  --font-family-H3: Merriweather Sans;
-  --font-family-bodytext: Merriweather Sans;
+  --font-family-H1: "alfarn-2";
+  --font-family-H2: "alfarn-2";
+  --font-family-H3: "Merriweather Sans";
+  --font-family-bodytext: "Merriweather Sans";
   --font-size-H3-cardtitel: 30.21px;
   --font-size-bodytekst-LG: 22.66px;
   --font-size-bodytekst-MD: 17px;
