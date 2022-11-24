@@ -8,9 +8,9 @@ import "../styles/global.css";
 
 
 <!-- Hvis man skal "togle" mellem deluxe eller ikke deluxe og skal man give sine  cards flere værdier kan man skrive data-atribut -->
-<article class={deluxe == true && "deluxe"} >
+<article class:list={[{deluxe}, {kobnu}]}>
 <!-- Billede til card -->
- <img src="placeholder.jpg" alt="" />
+ <!-- <img src="/img/placeholder.jpg" alt="" /> -->
 
   <!-- Titel på card -->
   <h3>{titel}</h3>
@@ -21,10 +21,18 @@ import "../styles/global.css";
  </div>
  <!-- Blåt banner -->
  <div>
-    <div>
-        <p>{kobnu}</p>
-        <p>{kobnupris}</p>
-    </div>
+
+    <p>
+        {kobnu == true && (
+            <strong>Ikon</strong>
+        )}
+    </p>
+    <p>
+        {kobnu == true && (
+            <strong>Køb nu: </strong>
+            <span>{kobnupris}</span>
+        )}
+    </p>
     <div>
         <p>{naestebud}</p>
     <p>{naestebudpris}</p>
@@ -41,5 +49,7 @@ import "../styles/global.css";
   <p>{beskrivelse}</p>
 
   <!-- Hvis man skal "togle" mellem deluxe eller ikke deluxe -->
-  {deluxe == true && <p>deluxe</p>}
+  <!-- {deluxe == true && (
+
+  )} -->
 </article>
