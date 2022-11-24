@@ -2,46 +2,71 @@
 // import Button from "./Button.astro";
 // Har man en component i en component, som en button i et card, så importerer man blot button til card
 
-const { titel, beskrivelse, deluxe, tidoverskrift, tid, kobnu, kobnupris, naestebud, naestebudpris, vurdering, vurderingpris} = Astro.props;
+const { titel, beskrivelse, deluxe, tidoverskrift, tid, kobnu, kobnupris, naestebud, naestebudpris, vurdering, vurderingpris, kubkassen, sidstechance, hammerslag} = Astro.props;
 import "../styles/global.css";
 ---
 
 
 <!-- Hvis man skal "togle" mellem deluxe eller ikke deluxe og skal man give sine  cards flere værdier kan man skrive data-atribut -->
-<article class:list={[{deluxe}, {kobnu}]}>
+<article class:list={[{deluxe}, {kobnu}, {kubkassen}, {sidstechance}, {naestebud}, {vurdering}, {hammerslag} ]}>
 <!-- Billede til card -->
  <!-- <img src="/img/placeholder.jpg" alt="" /> -->
 
   <!-- Titel på card -->
   <h3>{titel}</h3>
 
+
+ <!-- Blåt banner -->
  <div>
+    
+
+    <p>
+        {hammerslag == true && (
+            <img src="/img/hammer.svg" alt="køb nu">
+        )}
+    </p>
+    <p>
+        {deluxe == true && (
+            <img src="/img/diamant.svg" alt="deluxvare">
+        )}
+    </p>
+    <p>
+        {kubkassen == true && (
+            <img src="/img/pricetag.svg" alt="kubkassen">
+        )}
+    </p>
+    <p>
+        {sidstechance == true && (
+            <img src="/img/udråb.svg" alt="sidste chance">
+        )}
+    </p>
+
+
+    <div>
     <p>{tidoverskrift}</p>
    <p>{tid}</p> 
  </div>
- <!-- Blåt banner -->
- <div>
 
-    <p>
-        {kobnu == true && (
-            <strong>Ikon</strong>
-        )}
-    </p>
+
     <p>
         {kobnu == true && (
             <strong>Køb nu: </strong>
             <span>{kobnupris}</span>
         )}
     </p>
-    <div>
-        <p>{naestebud}</p>
-    <p>{naestebudpris}</p>
-    </div>
+    <p>
+        {naestebud == true && (
+        <strong>Næste bud: </strong>
+        <span>{naestebudpris}</span>
+        )}
+    </p>
     
-    <div>
-        <p>{vurdering}</p>
-    <p>{vurderingpris}</p>
-    </div>
+    <p>
+        {vurdering == true && (
+        <strong>Vurdering: </strong>
+        <span>{vurderingpris}</span>
+        )}
+    </p>
     
  </div>
 

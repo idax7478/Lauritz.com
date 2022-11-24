@@ -8,6 +8,8 @@ import Card from "../components/Card.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="https://use.typekit.net/avi7fgb.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300&display=swap" rel="stylesheet">
 		<title>Astro</title>
 	</head>
 	<body>
@@ -15,19 +17,38 @@ import Card from "../components/Card.astro";
 
     
     <Card
+     titel="Diamonds By Frisenholm. Brillantring af 9 kt. guld"
+
       deluxe={true}
-      titel="Diamonds By Frisenholm. Brillantring af 9 kt. guld"
+      kubkassen={true}
+      sidstechance={true}
+      hammerslag={true}
+      
+      tidoverskrift="Auktionen udløber"
+      tid="- d. 12. dec - kl. 20:00"
+      
+      kobnu={true}
+      kobnupris="1.600 DKK"
+
+      naestebud={true}
+      naestebudpris="1.200 DKK"
+
+      vurdering={true}
+      vurderingpris="1.800 DKK"
+      
       beskrivelse="Diamonds By Frisenholm. Brillantring af 9 kt. guld prydet med brillanter, ialt ca. 0.07 ct. Farve: Top Crystal (I). Klarhed SI. Ringstr. 56 Ø 17,8 mm. Vægt ca. 1,2 g."
       
     />
     <Card
+    kubkassen={false}
+      sidstechance={false}
       deluxe={false}
       titel="Diamonds By Frisenholm. Brillantring af 9 kt. guld"
 
 tidoverskrift="Auktionen udløber"
 tid="- d. 12. dec - kl. 20:00"
 
-kobnu={true}
+kobnu={false}
 kobnupris="1.600 DKK"
 
 naestebud="Næste bud"
