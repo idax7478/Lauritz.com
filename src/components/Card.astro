@@ -2,79 +2,102 @@
 // import Button from "./Button.astro";
 // Har man en component i en component, som en button i et card, så importerer man blot button til card
 
-const { titel, beskrivelse, deluxe, tidoverskrift, tid, kobnu, kobnupris, naestebud, naestebudpris, vurdering, vurderingpris, kubkassen, sidstechance, hammerslag} = Astro.props;
+const { titel, beskrivelse, deluxe, tidoverskrift, tid, kobnu, kobnupris, naestebud, naestebudpris, vurdering, vurderingpris, kubkassen, sidstechance, hammerslag, nyproduceret, produktimg } = Astro.props;
 import "../styles/global.css";
 ---
 
 
 <!-- Hvis man skal "togle" mellem deluxe eller ikke deluxe og skal man give sine  cards flere værdier kan man skrive data-atribut -->
-<article class:list={[{deluxe}, {kobnu}, {kubkassen}, {sidstechance}, {naestebud}, {vurdering}, {hammerslag} ]}>
+<article class:list={[{deluxe}, {kobnu}, {kubkassen}, {sidstechance}, {naestebud}, {vurdering}, {hammerslag}, {nyproduceret}, {produktimg}]}>
 <!-- Billede til card -->
  <!-- <img src="/img/placeholder.jpg" alt="" /> -->
 
-  <!-- Titel på card -->
-  <h3>{titel}</h3>
-
-
- <!-- Blåt banner -->
- <div>
-    
-
-    <p>
-        {hammerslag == true && (
-            <img src="/img/hammer.svg" alt="køb nu">
-        )}
-    </p>
-    <p>
-        {deluxe == true && (
-            <img src="/img/diamant.svg" alt="deluxvare">
-        )}
-    </p>
-    <p>
-        {kubkassen == true && (
-            <img src="/img/pricetag.svg" alt="kubkassen">
-        )}
-    </p>
-    <p>
-        {sidstechance == true && (
-            <img src="/img/udråb.svg" alt="sidste chance">
-        )}
-    </p>
-
-
+<div class="card">
     <div>
-    <p>{tidoverskrift}</p>
-   <p>{tid}</p> 
- </div>
-
-
-    <p>
-        {kobnu == true && (
-            <strong>Køb nu: </strong>
-            <span>{kobnupris}</span>
-        )}
-    </p>
-    <p>
-        {naestebud == true && (
-        <strong>Næste bud: </strong>
-        <span>{naestebudpris}</span>
-        )}
-    </p>
+             <p>
+                {produktimg == true && (
+                    <img src="/img/" alt="deluxvare">
+                )}
+            </p>
+                 
+              
+                
+          <!-- Titel på card -->
+          <h3>{titel}</h3>
+        
+        
+         <!-- Blåt banner -->
+         
+            
+        
+            <p>
+                {hammerslag == true && (
+                    <img src="/img/hammer.svg" alt="køb nu">
+                )}
+            </p>
+            <p>
+                {deluxe == true && (
+                    <img src="/img/diamant.svg" alt="deluxvare">
+                )}
+            </p>
+            <p>
+                {kubkassen == true && (
+                    <img src="/img/pricetag.svg" alt="kubkassen">
+                )}
+            </p>
+            <p>
+                {sidstechance == true && (
+                    <img src="/img/udråb.svg" alt="sidste chance">
+                )}
+            </p>
+    </div>
     
-    <p>
-        {vurdering == true && (
-        <strong>Vurdering: </strong>
-        <span>{vurderingpris}</span>
-        )}
-    </p>
+    <div>
+        <p>{nyproduceret}</p>
+        </div>
     
- </div>
+    
+        <div>
+        <p>{tidoverskrift}</p>
+       <p>{tid}</p> 
+     </div>
+    
+    <div>
+        <p>
+            {kobnu == true && (
+                <strong>Køb nu: </strong>
+                <span>{kobnupris}</span>
+            )}
+        </p>
+        <p>
+            {naestebud == true && (
+            <strong>Næste bud: </strong>
+            <span>{naestebudpris}</span>
+            )}
+        </p>
+        
+        <p>
+            {vurdering == true && (
+            <strong>Vurdering: </strong>
+            <span>{vurderingpris}</span>
+            )}
+        </p>
+        
+     </div>
+</div>
 
  <!-- Beskrivelse af vare -->
-  <p>{beskrivelse}</p>
+ <div> <p>{beskrivelse}</p></div>
 
   <!-- Hvis man skal "togle" mellem deluxe eller ikke deluxe -->
   <!-- {deluxe == true && (
 
   )} -->
 </article>
+<style>
+    .card{
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    </style>
