@@ -2,18 +2,41 @@
 // import Button from "./Button.astro";
 // Har man en component i en component, som en button i et card, så importerer man blot button til card
 
-const { titel, beskrivelse, deluxe, variant } = Astro.props;
+const { titel, beskrivelse, deluxe, tidOverskrift, tid, kobnu, kobnuPris, naestebud, naestebudPris, vurdering, vurderingPris} = Astro.props;
 import "../styles/global.css";
 ---
 
 
 <!-- Hvis man skal "togle" mellem deluxe eller ikke deluxe og skal man give sine  cards flere værdier kan man skrive data-atribut -->
-<article class={deluxe == true && "deluxe"} data-variant={variant}>
+<article class={deluxe == true && "deluxe"} >
   <!-- <Button /> -->
 
   <h3>{titel}</h3>
   <p>{beskrivelse}</p>
   <img src="placeholder.jpg" alt="" />
+
+ <div>
+    <p>{tidOverskrift}</p>
+   <p>{tid}</p> 
+ </div>
+
+ <div>
+    <div>
+        <p>{kobnu}</p>
+        <p>{kobnuPris}</p>
+    </div>
+    <div>
+        <p>{naestebud}</p>
+    <p>{naestebudPris}</p>
+    </div>
+    
+    <div>
+        <p>{vurdering}</p>
+    <p>{vurderingPris}</p>
+    </div>
+    
+ </div>
+  
 
   <!-- Hvis man skal "togle" mellem deluxe eller ikke deluxe -->
   {deluxe == true && <p>deluxe</p>}
