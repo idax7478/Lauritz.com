@@ -58,3 +58,12 @@
   --line-height-headings: 1.2;
   --line-height-bodytext: 1.7;
 }
+
+body {
+  display: grid;
+  place-content: center;
+}
+
+article {
+  max-width: 1000px;
+}
